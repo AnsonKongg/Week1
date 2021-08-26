@@ -1,3 +1,5 @@
+// Overall looks great! Great job! Just some minor feedback
+
 import React, { useState } from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
@@ -8,6 +10,7 @@ function App() {
   const [alert, setAlert] = useState("");
   const capacity = 100;
 
+  // _increase
   const _increse = () => {
     if (number === capacity) {
       setAlert("Max capacity is reached!")
@@ -17,6 +20,7 @@ function App() {
     }
   }
 
+  // You can try merging the _increse and _decrease together
   const _decrease = () => {
     if (number === 0) {
       setAlert("Number cannot lower than 0!")
@@ -40,6 +44,7 @@ function App() {
               Reset
             </Button>
             <p className="text">Capacity: {capacity}</p>
+            {/* we tend to use className instead of id in React */}
             <h1 id="number">{number}</h1>
             <p className="text">{alert}</p>
           </div>
